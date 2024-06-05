@@ -1,5 +1,16 @@
 {
-  "devDependencies": {
-    "jest": "^29.7.0"
+  "name": "extra-uno",
+  "version": "1.0.0",
+  "description": "A Command Line Version of UNO (with extra features)",
+  "main": "Extra-UNO.js",
+  "type": "module",
+  "scripts": {
+    "test": "vitest --watch",
+    "start": "node ./app.js"
+  },
+  "author": "Brendan Roley",
+  "license": "ISC",
+  "dependencies": {
+    "vitest": "^1.6.0"
   }
 }
