@@ -8,6 +8,7 @@ describe('Tests for the Card class', () => {
     CardTest = new Card("Plus 4", "None", -1, true);
   });
     describe('Getters', () => {
+
     it('getCardType()', () => {
       expect(CardTest.getCardType()).toBe("Plus 4");
     });
