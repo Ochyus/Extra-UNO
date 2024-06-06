@@ -2,7 +2,7 @@ import { beforeEach, describe, expect, it } from 'vitest';
 import Card from '../ts/Card.js';
 
 describe('Tests for the Card class', () => {
-    let CardTest;
+  let CardTest: Card;
   
   beforeEach(() => {
     CardTest = new Card("Plus 4", "None", -1, true);
