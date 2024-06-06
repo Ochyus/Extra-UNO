@@ -2,11 +2,12 @@
   "name": "extra-uno",
   "version": "1.0.0",
   "description": "A Command Line Version of UNO (with extra features)",
-  "main": "Extra-UNO.js",
+  "main": "./dest/main/app.js",
   "type": "module",
   "scripts": {
     "test": "vitest --watch",
-    "start": "tsc --watch"
+    "start": "node ./dest/main/app.js",
+    "build": "tsc"
   },
   "author": "Brendan Roley",
   "license": "ISC",

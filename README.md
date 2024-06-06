@@ -1,12 +1,12 @@
 # Extra UNO
 
-This repository contains the code for a game of Uno. Additional features can be added to the game over time.  This game will be played in the command line.
+This repository contains the code for a game of Uno. Additional features will be added to the game over time.  This game will be played in the command line.
 
-### Prerequisites
+## Prerequisites
 
 - [Node.js](https://nodejs.org/en/)
 
-### Installing
+## Installing
 
 1. Download or clone the repository
 
@@ -16,14 +16,22 @@ This repository contains the code for a game of Uno. Additional features can be 
 npm install
 ```
 
+## Running the game
+
+To run the game, you can run the following command in the terminal from the project folder.
+
+```terminal
+npm start
+```
+
 ## Running the tests
 
-The tests will 
+When run, The tests run the classes in the `./src/test` folder to ensure they are working correctly.
 
 To run the tests, you can run the following command in the terminal from the project folder.
 
 ```terminal
-npx jest ../
+npm test
 ```
 
 ## Authors
