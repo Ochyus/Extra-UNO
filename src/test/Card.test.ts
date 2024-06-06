@@ -5,12 +5,12 @@ describe('Tests for the Card class', () => {
   let CardTest: Card;
   
   beforeEach(() => {
-    CardTest = new Card("Plus 4", "None", -1, true);
+    CardTest = new Card();
   });
     describe('Getters', () => {
 
     it('getCardType()', () => {
-      expect(CardTest.getCardType()).toBe("Plus 4");
+      expect(CardTest.getCardType()).toBe("None");
     });
   
     it('getCardColor()', () => {
@@ -22,7 +22,7 @@ describe('Tests for the Card class', () => {
     });
 
     it('getIsWild()', () => {
-      expect(CardTest.getIsColored()).toBe(true);
+      expect(CardTest.getIsColored()).toBe(false);
     });
   });
   describe("Setters", () => {
@@ -42,6 +42,21 @@ describe('Tests for the Card class', () => {
     it('setIsWild()', () => {
         CardTest.setIsColored(true);
         expect(CardTest.getIsColored()).toBe(true);
+    });
+  });
+  describe("Other functionalities", () => {
+
+    it('setCardType()', () => {
+        CardTest.setCardType("Wild");
+        expect(CardTest.isCard()).toBe(false);
+        CardTest.setCardType("Wild");
+        expect(CardTest.isCard()).toBe(false);
+        CardTest.setCardColor("Blue");
+        expect(CardTest.isCard()).toBe(false);
+        CardTest.setCardNumber(2);
+        expect(CardTest.isCard()).toBe(false);
+        CardTest.setIsColored(true);
+        expect(CardTest.isCard()).toBe(true);
     });
   });
   });

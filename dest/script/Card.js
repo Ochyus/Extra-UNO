@@ -1,49 +1,47 @@
 export default class Card {
     /**
-     * Constructs a new Card object with the given parameters.
-     *
-     * @param {string} cardType - The type of the card.
-     * @param {string} cardColor - The color of the card.
-     * @param {number} cardNumber - The number of the card.
-     * @param {boolean} isColored - Whether the card is a wild card.
-     */
-    constructor(cardType, cardColor, cardNumber, isColored) {
-        this.cardType = cardType;
-        this.cardColor = cardColor;
-        this.cardNumber = cardNumber;
-        this.isColored = isColored;
-    }
-    /**
      * Returns the type of the card.
      *
-     * @return {string} The type of the card.
+     * @return {string} The type of the card. If the card type is unavailable, "None" is returned.
      */
     getCardType() {
-        return this.cardType;
+        if (typeof this.cardType === "string") {
+            return this.cardType;
+        }
+        return "None";
     }
     /**
      * Returns the color of the card.
      *
-     * @return {string} The color of the card.
+     * @return {string} The color of the card. If the card color is unable, "None" is returned.
      */
     getCardColor() {
-        return this.cardColor;
+        if (typeof this.cardColor === "string") {
+            return this.cardColor;
+        }
+        return "None";
     }
     /**
-     * Returns the card number of the current card.
+     * Returns the card number if it is a number, otherwise returns -1.
      *
-     * @return {number} The card number.
+     * @return {number} The card number if it available, otherwise -1.
      */
     getCardNumber() {
-        return this.cardNumber;
+        if (typeof this.cardNumber === "number") {
+            return this.cardNumber;
+        }
+        return -1;
     }
     /**
-     * Returns if the card is a wild card.
+     * Returns the value of the `isColored` property of the current card object.
      *
-     * @return {boolean} True if the card is a wild card.
+     * @return {boolean} The value of the `isColored` property. If the property is unavailable, `false` is returned.
      */
     getIsColored() {
-        return this.isColored;
+        if (typeof this.isColored === "boolean") {
+            return this.isColored;
+        }
+        return false;
     }
     /**
      * Sets the card type of the object.
@@ -76,5 +74,11 @@ export default class Card {
      */
     setIsColored(isColored) {
         this.isColored = isColored;
+    }
+    isCard() {
+        if (typeof this.cardType === "undefined" || typeof this.cardColor === "undefined" || typeof this.cardNumber === "undefined" || typeof this.isColored === "undefined") {
+            return false;
+        }
+        return true;
     }
 }
