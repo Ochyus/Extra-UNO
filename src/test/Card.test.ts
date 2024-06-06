@@ -1,5 +1,5 @@
 import { beforeEach, describe, expect, it } from 'vitest';
-import Card from '../ts/Card.js';
+import Card from '../Scripts/Card.js';
 
 describe('Tests for the Card class', () => {
   let CardTest: Card;
