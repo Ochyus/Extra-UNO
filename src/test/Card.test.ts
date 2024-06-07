@@ -10,19 +10,27 @@ describe('Tests for the Card class', () => {
     describe('Getters', () => {
 
     it('getCardType()', () => {
-      expect(CardTest.getCardType()).toBe("None");
+      expect(CardTest.getCardType()).toBe("");
     });
   
     it('getCardColor()', () => {
-      expect(CardTest.getCardColor()).toBe("None");
+      expect(CardTest.getCardColor()).toBe("");
     });
   
     it('getCardNumber()', () => {
       expect(CardTest.getCardNumber()).toBe(-1);
     });
 
-    it('getIsWild()', () => {
-      expect(CardTest.getIsColored()).toBe(false);
+    it('getCardAction()', () => {
+      expect(CardTest.getCardAction()).toBe("");
+    });
+
+    it('getCardName()', () => {
+      expect(CardTest.getCardName()).toBe("");
+    });
+
+    it('getIsCard()', () => {
+      expect(CardTest.getIsCard()).toBe(false);
     });
   });
   describe("Setters", () => {
@@ -31,32 +39,61 @@ describe('Tests for the Card class', () => {
         CardTest.setCardType("Wild");
         expect(CardTest.getCardType()).toBe("Wild");
     });
+
     it('setCardColor()', () => {
         CardTest.setCardColor("Blue");
         expect(CardTest.getCardColor()).toBe("Blue");
     });
+
     it('setCardNumber()', () => {
         CardTest.setCardNumber(2);
         expect(CardTest.getCardNumber()).toBe(2);
     });
-    it('setIsWild()', () => {
-        CardTest.setIsColored(true);
-        expect(CardTest.getIsColored()).toBe(true);
-    });
-  });
-  describe("Other functionalities", () => {
 
-    it('setCardType()', () => {
-        CardTest.setCardType("Wild");
-        expect(CardTest.isCard()).toBe(false);
-        CardTest.setCardType("Wild");
-        expect(CardTest.isCard()).toBe(false);
+    it('setCardAction()', () => {
+        CardTest.setCardAction("Flip");
+        expect(CardTest.getCardAction()).toBe("Flip");
+    });
+
+    it('setCardName()', () => {
+        CardTest.setIsCard();
+        CardTest.setCardName();
+        expect(CardTest.getCardName()).toBe("");
+        CardTest.setCardType("Colored Number");
+        CardTest.setIsCard();
+        CardTest.setCardName();
+        expect(CardTest.getCardName()).toBe("");
         CardTest.setCardColor("Blue");
-        expect(CardTest.isCard()).toBe(false);
+        CardTest.setIsCard();
+        CardTest.setCardName();
+        expect(CardTest.getCardName()).toBe("");
         CardTest.setCardNumber(2);
-        expect(CardTest.isCard()).toBe(false);
-        CardTest.setIsColored(true);
-        expect(CardTest.isCard()).toBe(true);
+        CardTest.setIsCard();
+        CardTest.setCardName();
+        expect(CardTest.getCardName()).toBe("");
+        CardTest.setCardAction("None");
+        CardTest.setIsCard();
+        CardTest.setCardName();
+        expect(CardTest.getCardName()).toBe("Blue 2 ");
+    });
+
+    it('setIsCard()', () => {
+      expect(CardTest.getIsCard()).toBe(false);
+      CardTest.setCardType("Colored Number");
+      CardTest.setIsCard();
+      expect(CardTest.getIsCard()).toBe(false);
+      CardTest.setCardColor("Blue");
+      CardTest.setIsCard();
+      expect(CardTest.getIsCard()).toBe(false);
+      CardTest.setCardNumber(2);
+      CardTest.setIsCard();
+      expect(CardTest.getIsCard()).toBe(false);
+      CardTest.setCardAction("None");
+      CardTest.setIsCard();
+      expect(CardTest.getIsCard()).toBe(true);
+      CardTest.setCardName();
+      CardTest.setIsCard();
+      expect(CardTest.getIsCard()).toBe(true);
     });
   });
-  });
+})

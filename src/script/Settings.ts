@@ -6,7 +6,7 @@ export default class Settings {
     willAlwaysDraw: boolean;
     playAfterDraw: boolean;
 
-    constructor() {
+    public constructor() {
         this.swap0 = false;
         this.shift8 = false;
         this.canStack = false;
@@ -14,32 +14,40 @@ export default class Settings {
         this.playAfterDraw = false;
     }
 
-    getSwap0(): boolean {
+    public getSwap0(): boolean {
         return this.swap0;
     }
 
-    getShift8(): boolean {
+    public getShift8(): boolean {
         return this.shift8;
     }
 
-    getCanStack(): boolean {
+    public getCanStack(): boolean {
         return this.canStack;
     }
 
-    getWillAlwaysDraw(): boolean {
+    public getWillAlwaysDraw(): boolean {
         return this.willAlwaysDraw;
     }
 
-    set0And8(swapAndShift: boolean) {
+    public getPlayAfterDraw(): boolean {
+        return this.playAfterDraw;
+    }
+
+    public set0And8(swapAndShift: boolean) {
         this.swap0 = swapAndShift;
         this.shift8 = swapAndShift;
     }
 
-    setCanStack(canStack: boolean) {
+    public setCanStack(canStack: boolean) {
         this.canStack = canStack;
     }
 
-    setWillAlwaysDraw(willAlwaysDraw: boolean) {
+    public setWillAlwaysDraw(willAlwaysDraw: boolean) {
         this.willAlwaysDraw = willAlwaysDraw;
+    }
+
+    public setPlayAfterDraw(playAfterDraw: boolean) {
+        this.playAfterDraw = playAfterDraw;
     }
 }

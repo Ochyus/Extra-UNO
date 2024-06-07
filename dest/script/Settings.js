@@ -18,6 +18,9 @@ export default class Settings {
     getWillAlwaysDraw() {
         return this.willAlwaysDraw;
     }
+    getPlayAfterDraw() {
+        return this.playAfterDraw;
+    }
     set0And8(swapAndShift) {
         this.swap0 = swapAndShift;
         this.shift8 = swapAndShift;
@@ -27,5 +30,8 @@ export default class Settings {
     }
     setWillAlwaysDraw(willAlwaysDraw) {
         this.willAlwaysDraw = willAlwaysDraw;
+    }
+    setPlayAfterDraw(playAfterDraw) {
+        this.playAfterDraw = playAfterDraw;
     }
 }

@@ -1,20 +1,27 @@
 export default class Card {
     
-    cardType?: string;      // A string representing the type of the card.
-    cardColor?: string;     // A string representing the color of the card.
-    cardNumber?: number;    // A number representing the number of the card.
-    isColored?: boolean;    // A boolean representing if the card is a wild card.
+    cardType: string;      // A string representing the type of the card.
+    cardColor: string;     // A string representing the color of the card.
+    cardNumber: number;    // A number representing the number of the card, if it has one.
+    cardAction: string;   // A string representing the action of the card.
+    cardName: string;      // A string representing the name of the card.
+    isCard: boolean;       // A boolean representing whether the card is a card or not.
 
+    public constructor() {
+        this.cardType = "";
+        this.cardColor = "";
+        this.cardNumber = -1;
+        this.cardAction = "";
+        this.cardName = "";
+        this.isCard = false;
+    }
     /**
      * Returns the type of the card.
      *
      * @return {string} The type of the card. If the card type is unavailable, "None" is returned.
      */
-    getCardType(): string {
-        if (typeof this.cardType === "string") {
-            return this.cardType;
-        }
-        return "None";
+    public getCardType(): string {
+        return this.cardType;
     }
 
     /**
@@ -22,11 +29,8 @@ export default class Card {
      *
      * @return {string} The color of the card. If the card color is unable, "None" is returned.
      */
-    getCardColor(): string {
-        if (typeof this.cardColor === "string") {
-            return this.cardColor;
-        }
-        return "None";
+    public getCardColor(): string {
+        return this.cardColor;
     }
 
     /**
@@ -34,23 +38,20 @@ export default class Card {
      *
      * @return {number} The card number if it available, otherwise -1.
      */
-    getCardNumber(): number {
-        if (typeof this.cardNumber === "number") {
-            return this.cardNumber;
-        }
-        return -1;
+    public getCardNumber(): number {
+        return this.cardNumber;
     }
 
-    /**
-     * Returns the value of the `isColored` property of the current card object.
-     *
-     * @return {boolean} The value of the `isColored` property. If the property is unavailable, `false` is returned.
-     */
-    getIsColored(): boolean {
-        if (typeof this.isColored === "boolean") {
-            return this.isColored;
-        }
-        return false;
+    public getCardAction(): string {
+        return this.cardAction;
+    }
+
+    public getCardName(): string {
+        return this.cardName;
+    }
+
+    public getIsCard(): boolean {
+        return this.isCard;
     }
 
     /**
@@ -58,7 +59,7 @@ export default class Card {
      *
      * @param {string} cardType - The new card type to set.
      */
-    setCardType(cardType: string) {
+    public setCardType(cardType: string) {
         this.cardType = cardType;
     }
 
@@ -67,7 +68,7 @@ export default class Card {
      *
      * @param {string} cardColor - The new color to set for the card.
      */
-    setCardColor(cardColor: string) {
+    public setCardColor(cardColor: string) {
         this.cardColor = cardColor;
     }
 
@@ -76,22 +77,36 @@ export default class Card {
      *
      * @param {number} cardNumber - The new card number to set.
      */
-    setCardNumber(cardNumber: number) {
+    public setCardNumber(cardNumber: number) {
         this.cardNumber = cardNumber;
     }
 
-    /**
-     * Sets if the card is a wild card.
-     *
-     * @param {boolean} isColored - The new wild status to set.
-     */
-    setIsColored(isColored: boolean) {
-        this.isColored = isColored;
+    public setCardAction(cardAction: string) {
+        this.cardAction = cardAction;
     }
-    isCard() {
-        if (typeof this.cardType === "undefined" || typeof this.cardColor === "undefined" || typeof this.cardNumber === "undefined" || typeof this.isColored === "undefined") {
-            return false;
+
+    public setCardName() {
+        if (this.isCard) {
+            if (this.getCardType().includes("Colored")) {
+                this.cardName += this.getCardColor() + " ";
+            }
+            if (this.getCardType().includes("Rainbow")) {
+                this.cardName += "Rainbow" + " ";
+            }
+            if (this.getCardType().includes("Number")) {
+                this.cardName += "" + this.getCardNumber() + " ";
+            }
+            if (this.getCardType().includes("Wild")) {
+                this.cardName = this.getCardType() + " ";
+            }
         }
-        return true;
+    }
+
+    public setIsCard() {
+        if (this.cardType === "" || this.cardColor === "" || this.cardNumber === -1 || this.cardAction === "") {
+            this.isCard = false;
+            return;
+        }
+        this.isCard = true;
     }
 }
