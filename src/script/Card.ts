@@ -18,7 +18,7 @@ export default class Card {
     /**
      * Returns the type of the card.
      *
-     * @return {string} The type of the card. If the card type is unavailable, "None" is returned.
+     * @return {string} The type of the card.
      */
     public getCardType(): string {
         return this.cardType;
@@ -27,16 +27,16 @@ export default class Card {
     /**
      * Returns the color of the card.
      *
-     * @return {string} The color of the card. If the card color is unable, "None" is returned.
+     * @return {string} The color of the card.
      */
     public getCardColor(): string {
         return this.cardColor;
     }
 
     /**
-     * Returns the card number if it is a number, otherwise returns -1.
+     * Returns the card number.
      *
-     * @return {number} The card number if it available, otherwise -1.
+     * @return {number} The card number.
      */
     public getCardNumber(): number {
         return this.cardNumber;
@@ -87,6 +87,7 @@ export default class Card {
 
     public setCardName() {
         if (this.isCard) {
+            this.cardName = "";
             if (this.getCardType().includes("Colored")) {
                 this.cardName += this.getCardColor() + " ";
             }
