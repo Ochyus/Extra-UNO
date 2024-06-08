@@ -25,11 +25,6 @@ describe('Tests for the Card class', () => {
       expect(CardTest.getCardNumber()).toBe(-1);
     });
 
-    it('getCardAction()', () => {
-      // Test initial card action, should be an empty string
-      expect(CardTest.getCardAction()).toBe("");
-    });
-
     it('getCardName()', () => {
       // Test initial card name, should be an empty string
       expect(CardTest.getCardName()).toBe("");
@@ -61,12 +56,6 @@ describe('Tests for the Card class', () => {
       expect(CardTest.getCardNumber()).toBe(2);
     });
 
-    it('setCardAction()', () => {
-      // Test setting and getting card action
-      CardTest.setCardAction("Flip");
-      expect(CardTest.getCardAction()).toBe("Flip");
-    });
-
     it('setCardName()', () => {
       // Testing the setCardName method
       // Initial state, should return empty string since card is not valid
@@ -90,13 +79,7 @@ describe('Tests for the Card class', () => {
       CardTest.setCardNumber(2);
       CardTest.setIsCard();
       CardTest.setCardName();
-      expect(CardTest.getCardName()).toBe("");
-
-      // Setting card action to "None", now all properties are set correctly and card should be valid
-      CardTest.setCardAction("None");
-      CardTest.setIsCard();
-      CardTest.setCardName();
-      expect(CardTest.getCardName()).toBe("Red 2 ");
+      expect(CardTest.getCardName()).toBe("Red 2");
     });
 
     it('setIsCard()', () => {
@@ -116,11 +99,6 @@ describe('Tests for the Card class', () => {
 
       // Setting card number to 2, should still return false as other properties are not set
       CardTest.setCardNumber(2);
-      CardTest.setIsCard();
-      expect(CardTest.getIsCard()).toBe(false);
-
-      // Setting card action to "None", now all properties are set correctly and card should be valid
-      CardTest.setCardAction("None");
       CardTest.setIsCard();
       expect(CardTest.getIsCard()).toBe(true);
 
