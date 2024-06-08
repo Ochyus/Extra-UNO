@@ -59,8 +59,14 @@ export default class Card {
      *
      * @param {string} cardType - The new card type to set.
      */
-    public setCardType(cardType: string) {
-        this.cardType = cardType;
+    public setCardType(index: number): void {
+        if (index === 0) {
+            this.cardType = "Colored Number";
+        } else if (index === 1) {
+            this.cardType = "Rainbow Number";
+        } else if (index === 2) {
+            
+        }
     }
 
     /**
@@ -68,8 +74,16 @@ export default class Card {
      *
      * @param {string} cardColor - The new color to set for the card.
      */
-    public setCardColor(cardColor: string) {
-        this.cardColor = cardColor;
+    public setCardColor(index: number): void {
+        if (index === 0) {
+            this.cardColor = "Red";
+        } else if (index === 1) {
+            this.cardColor = "Green";
+        } else if (index === 2) {
+            this.cardColor = "Blue";
+        } else if (index === 3) {
+            this.cardColor = "Yellow";
+        }
     }
 
     /**

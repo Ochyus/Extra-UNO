@@ -45,14 +45,14 @@ describe('Tests for the Card class', () => {
 
     it('setCardType()', () => {
       // Test setting and getting card type
-      CardTest.setCardType("Wild");
-      expect(CardTest.getCardType()).toBe("Wild");
+      CardTest.setCardType(0);
+      expect(CardTest.getCardType()).toBe("Colored Number");
     });
 
     it('setCardColor()', () => {
       // Test setting and getting card color
-      CardTest.setCardColor("Blue");
-      expect(CardTest.getCardColor()).toBe("Blue");
+      CardTest.setCardColor(0);
+      expect(CardTest.getCardColor()).toBe("Red");
     });
 
     it('setCardNumber()', () => {
@@ -75,13 +75,13 @@ describe('Tests for the Card class', () => {
       expect(CardTest.getCardName()).toBe("");
 
       // Setting card type to "Colored Number", should still return empty string as other properties are not set
-      CardTest.setCardType("Colored Number");
+      CardTest.setCardType(0);
       CardTest.setIsCard();
       CardTest.setCardName();
       expect(CardTest.getCardName()).toBe("");
 
       // Setting card color to "Blue", should still return empty string as other properties are not set
-      CardTest.setCardColor("Blue");
+      CardTest.setCardColor(0);
       CardTest.setIsCard();
       CardTest.setCardName();
       expect(CardTest.getCardName()).toBe("");
@@ -96,7 +96,7 @@ describe('Tests for the Card class', () => {
       CardTest.setCardAction("None");
       CardTest.setIsCard();
       CardTest.setCardName();
-      expect(CardTest.getCardName()).toBe("Blue 2 ");
+      expect(CardTest.getCardName()).toBe("Red 2 ");
     });
 
     it('setIsCard()', () => {
@@ -105,12 +105,12 @@ describe('Tests for the Card class', () => {
       expect(CardTest.getIsCard()).toBe(false);
 
       // Setting card type to "Colored Number", should still return false as other properties are not set
-      CardTest.setCardType("Colored Number");
+      CardTest.setCardType(0);
       CardTest.setIsCard();
       expect(CardTest.getIsCard()).toBe(false);
 
       // Setting card color to "Blue", should still return false as other properties are not set
-      CardTest.setCardColor("Blue");
+      CardTest.setCardColor(0);
       CardTest.setIsCard();
       expect(CardTest.getIsCard()).toBe(false);
 
