@@ -2,7 +2,7 @@ export default class Card {
     constructor() {
         this.cardType = "";
         this.cardColor = "";
-        this.cardNumber = -1;
+        this.cardNumber = -2;
         this.cardName = "";
         this.isCard = false;
     }
@@ -58,25 +58,67 @@ export default class Card {
             this.cardType = "Colored Go Again";
         }
         else if (index === 5) {
-            this.cardType = "Colored Discard One";
+            this.cardType = "Colored Discard 1";
         }
         else if (index === 6) {
-            this.cardType = "Colored Discard Two";
+            this.cardType = "Colored Discard 2";
         }
         else if (index === 7) {
-            this.cardType = "Colored Draw One";
+            this.cardType = "Colored Draw 1";
         }
         else if (index === 8) {
-            this.cardType = "Colored Draw Two";
+            this.cardType = "Colored Draw 2";
         }
         else if (index === 9) {
             this.cardType = "Wild";
         }
         else if (index === 10) {
-            this.cardType = "Wild Draw Four";
+            this.cardType = "Wild Draw 1";
         }
-        else {
-            this.cardType = "None";
+        else if (index === 11) {
+            this.cardType = "Wild Draw 2";
+        }
+        else if (index === 12) {
+            this.cardType = "Wild Draw 4";
+        }
+        else if (index === 13) {
+            this.cardType = "Wild Draw 6";
+        }
+        else if (index === 14) {
+            this.cardType = "Wild Draw 8";
+        }
+        else if (index === 15) {
+            this.cardType = "Wild Draw 10";
+        }
+        else if (index === 16) {
+            this.cardType = "Wild D2";
+        }
+        else if (index === 17) {
+            this.cardType = "Wild D4";
+        }
+        else if (index === 18) {
+            this.cardType = "Wild D6";
+        }
+        else if (index === 19) {
+            this.cardType = "Wild D8";
+        }
+        else if (index === 20) {
+            this.cardType = "Wild D10";
+        }
+        else if (index === 21) {
+            this.cardType = "Wild D12";
+        }
+        else if (index === 22) {
+            this.cardType = "Wild D20";
+        }
+        else if (index === 23) {
+            this.cardType = "Wild 777";
+        }
+        else if (index === 24) {
+            this.cardType = "Wild Shield";
+        }
+        else if (index === 25) {
+            this.cardType = "Wild Swap";
         }
     }
     /**
@@ -144,7 +186,7 @@ export default class Card {
         }
     }
     setIsCard() {
-        if (this.cardType === "" || this.cardColor === "" || this.cardNumber === -1) {
+        if (this.cardType === "" || this.cardColor === "" || this.cardNumber === -2) {
             this.isCard = false;
             return;
         }

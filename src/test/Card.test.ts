@@ -22,7 +22,7 @@ describe('Tests for the Card class', () => {
 
     it('getCardNumber()', () => {
       // Test initial card number, should be -1
-      expect(CardTest.getCardNumber()).toBe(-1);
+      expect(CardTest.getCardNumber()).toBe(-2);
     });
 
     it('getCardName()', () => {
