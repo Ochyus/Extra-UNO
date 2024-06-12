@@ -1,10 +1,10 @@
 export default class Card {
     
-    cardType: string;      // A string representing the type of the card.
-    cardColor: string;     // A string representing the color of the card.
-    cardNumber: number;    // A number representing the number of the card, if it has one.
-    cardName: string;      // A string representing the name of the card.
-    isCard: boolean;       // A boolean representing whether the card is a card or not.
+    private cardType: string;      // A string representing the type of the card.
+    private cardColor: string;     // A string representing the color of the card.
+    private cardNumber: number;    // A number representing the number of the card, if it has one.
+    private cardName: string;      // A string representing the name of the card.
+    private isCard: boolean;       // A boolean representing whether the card is a card or not.
 
     public constructor() {
         this.cardType = "";

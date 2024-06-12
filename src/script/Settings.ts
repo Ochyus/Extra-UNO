@@ -1,10 +1,10 @@
 export default class Settings {
 
-    swap0: boolean;
-    shift8: boolean;
-    canStack: boolean;
-    willAlwaysDraw: boolean;
-    playAfterDraw: boolean;
+    private swap0: boolean;
+    private shift8: boolean;
+    private canStack: boolean;
+    private willAlwaysDraw: boolean;
+    private playAfterDraw: boolean;
 
     public constructor() {
         this.swap0 = false;

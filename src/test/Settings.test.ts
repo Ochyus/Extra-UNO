@@ -1,5 +1,5 @@
 import { beforeEach, describe, expect, it } from 'vitest';
-import Settings from '../script/Settings.ts';
+import Settings from '../script/Settings.js';
 
 describe('Tests for the Settings class', () => {
     let SettingsTest: Settings;

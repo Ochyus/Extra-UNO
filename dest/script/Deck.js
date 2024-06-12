@@ -1,4 +1,4 @@
-import Card from './Card';
+import Card from './Card.js';
 export default class Deck {
     constructor() {
         this.deck = [];
@@ -42,17 +42,39 @@ export default class Deck {
                 this.deck.push(card);
             }
         }
+        for (let i = 9; i < 23; i++) {
+            for (let c = 0; c < 2; c++) {
+                card.setCardType(i);
+                card.setCardColor(-1);
+                card.setCardNumber(-1);
+                card.setIsCard();
+                if (card.getIsCard()) {
+                    card.setCardName();
+                    this.deck.push(card);
+                }
+            }
+        }
+        for (let i = 23; i < 26; i++) {
+            card.setCardType(i);
+            card.setCardColor(-1);
+            card.setCardNumber(-1);
+            card.setIsCard();
+            if (card.getIsCard()) {
+                card.setCardName();
+                this.deck.push(card);
+            }
+        }
     }
     getDeck() {
         return this.deck;
-    }
-    getDeckSize() {
-        return this.deck.length;
     }
     shuffle(deck) {
         for (let i = deck.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
             [deck[i], deck[j]] = [deck[j], deck[i]];
         }
+    }
+    removeCard(number) {
+        return this.deck.splice(number, 1)[0];
     }
 }
